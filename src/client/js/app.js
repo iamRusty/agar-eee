@@ -403,7 +403,7 @@ function vertical(key) {
 }
 function checkLatency() {
     // Ping.
-    startPingTime = Date.now();
+    global.startPingTime = Date.now();
     socket.emit('ping');
 }
 
@@ -507,7 +507,7 @@ chat.registerCommand('kick', 'Kick a player, for admins only.', function (args) 
 function setupSocket(socket) {
     // Handle ping.
     socket.on('pong', function () {
-        var latency = Date.now() - startPingTime;
+        var latency = Date.now() - global.startPingTime;
         debug('Latency: ' + latency + 'ms');
         chat.addSystemLine('Ping: ' + latency + 'ms');
     });
