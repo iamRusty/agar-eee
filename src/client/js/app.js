@@ -1,4 +1,5 @@
 var io = require('socket.io-client');
+var global = require('./global');
 
 var playerName;
 var playerType;
@@ -118,7 +119,6 @@ var kicked = false;
 
 // TODO: Break out into GameControls.
 var continuity = false;
-var startPingTime = 0;
 var toggleMassState = 0;
 var backgroundColor = '#f2fbff';
 var lineColor = '#000000';
